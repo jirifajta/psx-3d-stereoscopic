@@ -10,7 +10,7 @@ _This repository is for research and educational purposes._
 <div align="center" width="100% style="margin-bottom:0;">
     <img width="100%" src="images/PSX-3D-stereoscopic-SBS-4x3-3DTV.png">
 </div>
-HSBS image on 3DTV.<br/>
+HSBS image on 3DTV 4:3.<br/>
 
 # Table of contents
 * Methods about stereoscopic image format
@@ -63,9 +63,10 @@ VECTOR scale = {2048, ONE, ONE};// scale x-axis by half.<br/>
 ScaleMatrixL(&camera->matrix, &scale);
 
 # Bonus: Light support and Silent Hill fog
-Light support and Silent Hill fog was implemented.<br/>
+Light support and Silent Hill fog was implemented.
+
 ![HSBS Silent Hill fog 16x9 on 3DTV.](images/PSX-3D-stereoscopic-SBS-16x9-Silent-Hill-fog 3DTV.png)
-_HSBS Silent Hill fog 16x9 on 3DTV._<br/>
+_HSBS Silent Hill fog 16:9 on 3DTV._<br/>
 
 Moreover, I was inspired by Silent Hill fog which surprised me that this is not an out of the box solution in the PSX hardware. Which in contrast a fog distance color is. This works best with black color only.
 I would like to thank _Elias Daler_ for his publication on YouTube about the implementation of Silent Hill fog. These are his resources:
@@ -75,13 +76,13 @@ I would like to thank _Elias Daler_ for his publication on YouTube about the imp
 His explanation was detailed enough to implement this fog. But I have to point out an implementation aspect that I struggled with. Although front and back polygons where correctly ordered into ordering table on PSX. It still resulted in translucent polygons rather the gray-ish polygons in the distance. Therefore, both polygons needs to be merged as one large primitive using _MargePrim(polygon_primitive0_poly_fog, polygon_primitive1_poly)_ function and then add to ordering table using _AddPrim(polygon_primitive0_poly_fog)_ only.
 
 ![HSBS image for left and right eye.](images/PSX-3D-stereoscopic-SBS-4x3.png)
-_HSBS image for left and right eye._<br/>
+_HSBS image for left and right eye 4:3._<br/>
 
 ![HSBS Silent Hill fog 4x3.](images/PSX-3D-stereoscopic-SBS-4x3-Silent-Hill-fog.png)
-_HSBS Silent Hill fog 4x3._<br/>
+_HSBS Silent Hill fog 4:3._<br/>
 
 ![HSBS Silent Hill fog 16x9.](images/PSX-3D-stereoscopic-SBS-16x9-Silent-Hill-fog.png)
-_HSBS Silent Hill fog 16x9._<br/>
+_HSBS Silent Hill fog 16:9._<br/>
 
 # Code
 Code running this demo is not made public, but this repository provide some snipped code to provide some idea on how to implement stereoscopic rendering. Also what I want to mention, is that split screen approach in this snipped code is not ideal. Draw command and updating polygon primitives are not processed in parallel which results in less performance.
