@@ -10,10 +10,7 @@ _This repository is for research and educational purposes._
 <p align="center" width="100%">
     <img width="100%" src="images/PSX-3D-stereoscopic-SBS-4x3-3DTV.png">
 </p>
-HSBS image on 3DTV.
-
-![HSBS image for left and right eye.](images/PSX-3D-stereoscopic-SBS-4x3.png)
-HSBS image for left and right eye.<br/>
+HSBS image on 3DTV.<br/>
 
 # Table of contents
 * Methods about stereoscopic image format
@@ -39,16 +36,16 @@ Here the breakdown. Yes, it is possible to use left image on odd lines and right
 Second about analog signal. 3D TV’s support Half Side-by-Side video input to convert into 3D stereoscopic image, but my experience is that this does only work with a digital video input like HDMI. Because 3D TV’s that uses an analog video input supports only to convert 2D image into simulated 3D image as mentioned before. This is a setting that must be avoided in this setup. There is a workaround, connect a PlayStation analog video output (highly recommended to use Scart RGB or S-VIDEO for better sharpness) to an “analog to HDMI converter” and put this HDMI output into your 3D TV. Then the Side-by-Side setting is available to convert into 3D image.
 
 The method that I ended up using, was to implement Half Side-by-Side.
-You can try out these 3 images also on your 3DTV by connecting your PC to 3DTV via HDMI and set TV to 3D mode using SBS horizontal.
+You can try out 3 images (here at the bottom) on your 3DTV by connecting your PC to 3DTV via HDMI and set TV to 3D mode using SBS horizontal.
 
 # Implementation of stereoscopic rendering on PSX
 Two cameras are needed in a world space. Therefore, it is fairly identical to a two player split screen approach.<br/>
 4 drawing buffers and 2 display buffers are needed when using double buffering (upper 2 draw-buffers are the first display-buffer and bottom 2 draw-buffers are the second display-buffer).
 These 4 buffers are used for left and right screen for each eye and both are double buffered (display- and draw-buffer).
-![PSX VRAM double buffered left and right image.](images/PSX-3D-stereoscopic-SBS-4x3-VRAM-buffers.png)
+![PSX VRAM double buffered left and right image.](images/PSX-3D-stereoscopic-SBS-4x3-VRAM-buffers.png)<br/>
 PSX VRAM double buffered left and right image.<br/>
 Virtually I use a third camera as a center point for the two “3D stereoscopic cameras“. I will mention these two “stereo cameras” for short. Fly camera system was implemented to move these camera in world space for great experience.
-![Stereoscopic camera setup. Standard camera centered, left- and right-camera for stereoscopic image.Illustration made in Blender.](images/Camera-setup.png)
+![Stereoscopic camera setup. Standard camera centered, left- and right-camera for stereoscopic image.Illustration made in Blender.](images/Camera-setup.png)<br/>
 Stereoscopic camera setup. Standard camera centered, left- and right-camera for stereoscopic image.Illustration made in Blender.
 
 Ideal offset for the 2 stereo cameras is 384 units with respect to camera center (i.e. 2 x 384 between the 2 stereo cameras.) Use 512 units offset to have stronger 3D effect. Note that this world space was defined as 12bit fixed-point decimal (i.e. 4096 units represents ONE).
@@ -67,9 +64,8 @@ ScaleMatrixL(&camera->matrix, &scale);
 # Bonus: Light support and Silent Hill fog
 Light support and Silent Hill fog was implemented.
 
-![HSBS Silent Hill fog 4x3.](images/PSX-3D-stereoscopic-SBS-4x3-Silent-Hill-fog.png)
-![HSBS Silent Hill fog 16x9.](images/PSX-3D-stereoscopic-SBS-16x9-Silent-Hill-fog.png)
 ![HSBS Silent Hill fog 16x9 on 3DTV.](images/PSX-3D-stereoscopic-SBS-16x9-Silent-Hill-fog 3DTV.png)
+HSBS Silent Hill fog 16x9 on 3DTV.<br/>
 
 Moreover, I was inspired by Silent Hill fog which surprised me that this is not an out of the box solution in the PSX hardware. Which in contrast a fog distance color is. This works best with black color only.
 I would like to thank _Elias Daler_ for his publication on YouTube about the implementation of Silent Hill fog. These are his resources:
@@ -77,6 +73,13 @@ I would like to thank _Elias Daler_ for his publication on YouTube about the imp
 * [How Silent Hill works on PS1](https://eliasdaler.itch.io/ps1-fog])
 
 His explanation was detailed enough to implement this fog. But I have to point out an implementation aspect that I struggled with. Although front and back polygons where correctly ordered into ordering table on PSX. It still resulted in translucent polygons rather the gray-ish polygons in the distance. Therefore, both polygons needs to be merged as one large primitive using _MargePrim(polygon_primitive0_poly_fog, polygon_primitive1_poly)_ function and then add to ordering table using _AddPrim(polygon_primitive0_poly_fog)_ only.
+
+![HSBS image for left and right eye.](images/PSX-3D-stereoscopic-SBS-4x3.png)
+HSBS image for left and right eye.<br/>
+![HSBS Silent Hill fog 4x3.](images/PSX-3D-stereoscopic-SBS-4x3-Silent-Hill-fog.png)
+HSBS Silent Hill fog 4x3.<br/>
+![HSBS Silent Hill fog 16x9.](images/PSX-3D-stereoscopic-SBS-16x9-Silent-Hill-fog.png)
+HSBS Silent Hill fog 16x9.<br/>
 
 # Code
 Code running this demo is not made public, but this repository provide some snipped code to provide some idea on how to implement stereoscopic rendering. Also what I want to mention, is that split screen approach in this snipped code is not ideal. Draw command and updating polygon primitives are not processed in parallel which results in less performance.
