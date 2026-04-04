@@ -7,9 +7,10 @@ _This repository is for research and educational purposes._
 **Initial document date:** 25-03-2026
 **Code implementation:** 2025
 
-<p align="center" width="100%">
+<p align="center" width="100% style="margin-bottom:0;">
     <img width="100%" src="images/PSX-3D-stereoscopic-SBS-4x3-3DTV.png">
-</p>HSBS image on 3DTV.<br/>
+</p>
+HSBS image on 3DTV.<br/>
 
 # Table of contents
 * Methods about stereoscopic image format
@@ -46,7 +47,7 @@ _PSX VRAM double buffered left and right image._<br/>
 
 Virtually I use a third camera as a center point for the two “3D stereoscopic cameras“. I will mention these two “stereo cameras” for short. Fly camera system was implemented to move these camera in world space for great experience.
 ![Stereoscopic camera setup. Standard camera centered, left- and right-camera for stereoscopic image.Illustration made in Blender.](images/Camera-setup.png)<br/>
-Stereoscopic camera setup. Standard camera centered, left- and right-camera for stereoscopic image.Illustration made in Blender.
+_Stereoscopic camera setup. Standard camera centered, left- and right-camera for stereoscopic image.Illustration made in Blender._
 
 Ideal offset for the 2 stereo cameras is 384 units with respect to camera center (i.e. 2 x 384 between the 2 stereo cameras.) Use 512 units offset to have stronger 3D effect. Note that this world space was defined as 12bit fixed-point decimal (i.e. 4096 units represents ONE).
 This program supports real-time changing offset of the cameras. Notable difference is by increasing or decreasing by steps of 128 units for the offset.
@@ -58,7 +59,7 @@ It is possible to program an executable file with An internal resolution of 320x
 Do not forget to squash the view space on x-axis accordingly by scaling 3D objects on screen before projection. The screen space image will be stretched during HSBS 3D TV process on x-axis.
 
 Apply scale to matrix:
-VECTOR scale = {2048, ONE, ONE};// scale x-axis by half.
+VECTOR scale = {2048, ONE, ONE};// scale x-axis by half.<br/>
 ScaleMatrixL(&camera->matrix, &scale);
 
 # Bonus: Light support and Silent Hill fog
