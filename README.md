@@ -68,11 +68,11 @@ Light support and Silent Hill fog was implemented.
 <div align="center" width="100% style="margin-bottom:0;">
     <img width="100%" src="images/PSX-3D-stereoscopic-SBS-16x9-Silent-Hill-fog 3DTV.png">
 </div>
-_HSBS Silent Hill fog 16:9 on 3DTV._<br/>
+<p>_HSBS Silent Hill fog 16:9 on 3DTV._</p>
 
 Moreover, I was inspired by Silent Hill fog which surprised me that this is not an out of the box solution in the PSX hardware. Which in contrast a fog distance color is. This works best with black color only.
 I would like to thank _Elias Daler_ for his publication on YouTube about the implementation of Silent Hill fog. These are his resources:
-* [I implemented Silent Hill Fog In My Real PS1 Game](https://www.youtube.com/watch?v=EwpFdMJlVP4])
+* [YouTube: I implemented Silent Hill Fog In My Real PS1 Game](https://www.youtube.com/watch?v=EwpFdMJlVP4])
 * [How Silent Hill works on PS1](https://eliasdaler.itch.io/ps1-fog])
 
 His explanation was detailed enough to implement this fog. But I have to point out an implementation aspect that I struggled with. Although front and back polygons where correctly ordered into ordering table on PSX. It still resulted in translucent polygons rather the gray-ish polygons in the distance. Therefore, both polygons needs to be merged as one large primitive using _MargePrim(polygon_primitive0_poly_fog, polygon_primitive1_poly)_ function and then add to ordering table using _AddPrim(polygon_primitive0_poly_fog)_ only.
