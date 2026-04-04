@@ -3,9 +3,9 @@ When I was developing on PlayStation 1 (aka PS1 or PSX), I wanted to develop som
 
 _This repository is for research and educational purposes._
 
-**Author:** MSc Jiří Fajta
-**Initial document date:** 25-03-2026
-**Code implementation:** 2025
+**Author:** MSc Jiří Fajta<br/>
+**Initial document date:** 25-03-2026<br/>
+**Code implementation:** 2025<br/>
 
 <div align="center" width="100% style="margin-bottom:0;">
     <img width="100%" src="images/PSX-3D-stereoscopic-SBS-4x3-3DTV.png">
