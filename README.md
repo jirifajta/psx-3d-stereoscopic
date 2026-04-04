@@ -58,14 +58,16 @@ It is possible to program an executable file with An internal resolution of 320x
 
 Do not forget to squash the view space on x-axis accordingly by scaling 3D objects on screen before projection. The screen space image will be stretched during HSBS 3D TV process on x-axis.
 
-Apply scale to matrix:
+Apply scale to matrix:<br/>
 VECTOR scale = {2048, ONE, ONE};// scale x-axis by half.<br/>
 ScaleMatrixL(&camera->matrix, &scale);
 
 # Bonus: Light support and Silent Hill fog
 Light support and Silent Hill fog was implemented.
 
-![HSBS Silent Hill fog 16x9 on 3DTV.](images/PSX-3D-stereoscopic-SBS-16x9-Silent-Hill-fog 3DTV.png)
+<div align="center" width="100% style="margin-bottom:0;">
+    <img width="100%" src="images/PSX-3D-stereoscopic-SBS-16x9-Silent-Hill-fog 3DTV.png">
+</div>
 _HSBS Silent Hill fog 16:9 on 3DTV._<br/>
 
 Moreover, I was inspired by Silent Hill fog which surprised me that this is not an out of the box solution in the PSX hardware. Which in contrast a fog distance color is. This works best with black color only.
