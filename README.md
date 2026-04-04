@@ -10,7 +10,8 @@ _This repository is for research and educational purposes._
 <p align="center" width="100%">
     <img width="100%" src="images/PSX-3D-stereoscopic-SBS-4x3-3DTV.png">
 </p>
-HSBS image on 3DTV.<br/>
+HSBS image on 3DTV.
+
 ![HSBS image for left and right eye.](images/PSX-3D-stereoscopic-SBS-4x3.png)
 HSBS image for left and right eye.<br/>
 
