@@ -5,7 +5,7 @@ _This repository is for research and educational purposes._
 
 **Author:** MSc Jiří Fajta<br/>
 **Initial document date:** 25-03-2026<br/>
-**Code implementation:** 2025<br/>
+**Code implementation date:** 2025<br/>
 
 <div align="center" width="100% style="margin-bottom:0;">
     <img width="100%" src="images/PSX-3D-stereoscopic-SBS-4x3-3DTV.png">
