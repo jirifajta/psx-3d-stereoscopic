@@ -68,7 +68,7 @@ Light support and Silent Hill fog was implemented.
 <div align="center" width="100% style="margin-bottom:0;">
     <img width="100%" src="images/PSX-3D-stereoscopic-SBS-16x9-Silent-Hill-fog 3DTV.png">
 </div>
-<p>_HSBS Silent Hill fog 16:9 on 3DTV._</p>
+<p><em>HSBS Silent Hill fog 16:9 on 3DTV.</em></p>
 
 Moreover, I was inspired by Silent Hill fog which surprised me that this is not an out of the box solution in the PSX hardware. Which in contrast a fog distance color is. This works best with black color only.
 I would like to thank _Elias Daler_ for his publication on YouTube about the implementation of Silent Hill fog. These are his resources:
