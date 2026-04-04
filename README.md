@@ -77,7 +77,7 @@ I would like to thank _Elias Daler_ for his publication on YouTube about the imp
 
 His explanation was detailed enough to implement this fog. But I have to point out an implementation aspect that I struggled with. Although front and back polygons where correctly ordered into ordering table on PSX. It still resulted in translucent polygons rather the gray-ish polygons in the distance. Therefore, both polygons needs to be merged as one large primitive using _MargePrim(polygon_primitive0_poly_fog, polygon_primitive1_poly)_ function and then add to ordering table using _AddPrim(polygon_primitive0_poly_fog)_ only.
 
-You can try out 3 images (here at the bottom) on your 3DTV by connecting your PC to 3DTV via HDMI and set TV to 3D mode using SBS horizontal.
+You can try out these 3 images below on your 3DTV by connecting your PC to 3DTV via HDMI and set TV to 3D mode using SBS horizontal.
 
 ![HSBS image for left and right eye.](images/PSX-3D-stereoscopic-SBS-4x3.png)
 _HSBS image for left and right eye 4:3._<br/>
