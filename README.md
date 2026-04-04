@@ -7,9 +7,9 @@ _This repository is for research and educational purposes._
 **Initial document date:** 25-03-2026
 **Code implementation:** 2025
 
-<p align="center" width="100% style="margin-bottom:0;">
+<div align="center" width="100% style="margin-bottom:0;">
     <img width="100%" src="images/PSX-3D-stereoscopic-SBS-4x3-3DTV.png">
-</p>
+</div>
 HSBS image on 3DTV.<br/>
 
 # Table of contents
@@ -63,7 +63,7 @@ VECTOR scale = {2048, ONE, ONE};// scale x-axis by half.<br/>
 ScaleMatrixL(&camera->matrix, &scale);
 
 # Bonus: Light support and Silent Hill fog
-Light support and Silent Hill fog was implemented.
+Light support and Silent Hill fog was implemented.<br/>
 ![HSBS Silent Hill fog 16x9 on 3DTV.](images/PSX-3D-stereoscopic-SBS-16x9-Silent-Hill-fog 3DTV.png)
 _HSBS Silent Hill fog 16x9 on 3DTV._<br/>
 
