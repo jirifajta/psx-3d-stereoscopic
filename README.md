@@ -21,8 +21,7 @@ HSBS image on 3DTV 4:3.<br/>
 * Code
 
 # Methods about stereoscopic image format
-Methods to transfer stereoscopic image
-This chapter will only focus to explain two methods very briefly.
+This chapter will focus to explain two methods very briefly.
 * Dual Stream/Output [Multiview Video Coding](https://www.merl.com/publications/docs/TR2011-022.pdf) (MVC)<br/>This contains two full resolution images for left and right eye that is encoded into each video stream separately and send over HDMI.<br/>This method is not possible on the PSX retail hardware as-is.
 
 * Half Side-by-Side ([Half SBS or HSBS](https://inairspace.com/blogs/learn-with-inair/side-by-side-3d-format-complete-guide-to-immersive-stereoscopic-video))<br/>The left and right images are squashed horizontally into single image. Where horizontal resolution of each images is reduced by half compared to targeted resolution.
