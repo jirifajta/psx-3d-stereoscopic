@@ -1,4 +1,4 @@
-# Introduction
+# PSX 3D Stereoscopic
 When I was developing on PlayStation 1 (aka PS1 or PSX), I wanted to develop something unusual on this platform. So, I was starting to research how to implement 3D stereoscopic functionality on PSX. Long story short, It works. Therefore, the following will discuss.
 
 _This repository is for research and educational purposes._
@@ -88,5 +88,4 @@ _HSBS Silent Hill fog 4:3._<br/>
 _HSBS Silent Hill fog 16:9._<br/>
 
 # Code
-Code running this demo is not made public, but this repository provide some snipped code to provide some idea on how to implement stereoscopic rendering. Also what I want to mention, is that split screen approach in this snipped code is not ideal. Draw command and updating polygon primitives are not processed in parallel which results in less performance.
-[Snipped code](src/psx3dStereoscopicSnipped.c) provides high level idea about how to implement 3D Stereoscopic.
+Code running this demo is not made public, but this [Snipped code](src/psx3dStereoscopicSnipped.c) provides high level idea about how to implement 3D Stereoscopic rendering. Also what I want to mention, is that split screen approach in this snipped code is not ideal. Draw command and updating polygon primitives are not processed in parallel which results in less performance.
